@@ -19,12 +19,12 @@ RUN wget -O- https://astuteinternet.dl.sourceforge.net/project/rnaseq-mats/MATS/
  rm -fr rMATS.4.0.1 && \
  chmod +x /opt/rMATS-turbo-Linux-UCS4/rmats.py
 
-RUN wget -O- http://open-source-box.org/gsl/gsl-1.16.tar.gz | \
+RUN wget -O- http://open-source-box.org/gsl/gsl-1.14.tar.gz | \
  tar zx && \
- cd gsl-1.16 && \ 
+ cd gsl-1.14 && \ 
  ./configure --prefix=/usr && \
- make -j 40 && \
+ make && \
  make install && \
- rm -fr /root/gsl-1.16
+ rm -fr /root/gsl-1.14
  
 WORKDIR /
